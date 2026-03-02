@@ -1,0 +1,30 @@
+{
+  "lastId": 5,
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Buy groceries",
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "Walk the dog",
+      "status": false
+    },
+    {
+      "id": 3,
+      "name": "Read a book",
+      "status": false
+    },
+    {
+      "id": 4,
+      "name": "Finish TypeScript tutorial",
+      "status": false
+    },
+    {
+      "id": 5,
+      "name": "Call Mom",
+      "status": true
+    }
+  ]
+}
