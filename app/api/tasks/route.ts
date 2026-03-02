@@ -10,7 +10,7 @@ export async function GET() {
     try {
         const jsonData = await fs.readFile(filePath, 'utf-8');
         const data = JSON.parse(jsonData);
-        return NextResponse.json(data);
+        return NextResponse.json(data.tasks);
     } catch (error) {
         return NextResponse.json({ error: "Errore nella lettura dei dati" }, { status: 500 });
     }
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
 
         await fs.writeFile(filePath, JSON.stringify(data, null, 2));
 
-        return NextResponse.json({ success: true });
+        return NextResponse.json(newTask);
     } catch (error) {
         return NextResponse.json({ error: "Error while adding task to tasks.json" });
     }
