@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
-import { updateTag } from 'next/cache';
-import { json } from 'stream/consumers';
-import next from 'next';
 
 const filePath = path.join(process.cwd(), 'data', 'tasks.json');
 

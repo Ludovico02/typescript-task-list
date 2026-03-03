@@ -80,16 +80,22 @@ export default function TasksHome() {
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <div>
-                <h1 className="text-2xl font-bold mb-4">Task List</h1>
+        <div className="min-h-screen w-full bg-blue-400 flex items-center justify-center p-4">
+            <div className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-md min-h-125">
+                <h1 className="text-3xl font-bold text-center mb-8 flex justify-center items-center gap-2 text-black">
+                    ToDo List <span className="text-2xl">📋</span>
+                </h1>
+
                 <AddTaskButton onAddTask={handleAddTask} />
+
+                <div className="mt-6">
+                    <TaskList
+                        tasks={tasks}
+                        handleCheckboxChange={handleCheckboxChange}
+                        onDeleteTask={handleTaskDelete}
+                    />
+                </div>
             </div>
-            <TaskList
-                tasks={tasks}
-                handleCheckboxChange={handleCheckboxChange}
-                onDeleteTask={handleTaskDelete}
-            />
         </div>
     );
 }
