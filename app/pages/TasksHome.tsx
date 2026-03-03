@@ -67,13 +67,29 @@ export default function TasksHome() {
 
     }
 
+    const handleTaskDelete = async (id: number) => {
+        setTasks(prev => prev.filter(task => task.id !== id));
+
+        try {
+            await fetch(`/api/tasks?id=${id}`, {
+                method: 'DELETE'
+            });
+        } catch (error) {
+            console.error("Error while deleting the task: ", error);
+        }
+    }
+
     return (
         <div className="container mx-auto p-4">
             <div>
                 <h1 className="text-2xl font-bold mb-4">Task List</h1>
                 <AddTaskButton onAddTask={handleAddTask} />
             </div>
-            <TaskList tasks={tasks} handleCheckboxChange={handleCheckboxChange} />
+            <TaskList
+                tasks={tasks}
+                handleCheckboxChange={handleCheckboxChange}
+                onDeleteTask={handleTaskDelete}
+            />
         </div>
     );
 }

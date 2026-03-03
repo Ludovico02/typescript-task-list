@@ -1,5 +1,5 @@
 {
-  "lastId": 12,
+  "lastId": 13,
   "tasks": [
     {
       "id": 1,
@@ -29,21 +29,6 @@
     {
       "id": 6,
       "name": "Caca PooPoo",
-      "status": false
-    },
-    {
-      "id": 7,
-      "name": "Peepee Pepe",
-      "status": false
-    },
-    {
-      "id": 8,
-      "name": "argo",
-      "status": false
-    },
-    {
-      "id": 9,
-      "name": "a",
       "status": false
     },
     {

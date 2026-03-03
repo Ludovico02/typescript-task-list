@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { updateTag } from 'next/cache';
 import { json } from 'stream/consumers';
+import next from 'next';
 
 const filePath = path.join(process.cwd(), 'data', 'tasks.json');
 
@@ -59,5 +60,27 @@ export async function POST(request: Request) {
         return NextResponse.json(newTask);
     } catch (error) {
         return NextResponse.json({ error: "Error while adding task to tasks.json" });
+    }
+}
+
+export async function DELETE(request: Request) {
+    try {
+        const { searchParams } = new URL(request.url);
+        const id = searchParams.get('id');
+
+        if (!id) {
+            return NextResponse.json({ error: "Missing element ID..." }, { status: 400 });
+        }
+
+        const jsonData = await fs.readFile(filePath, 'utf-8');
+        const data = JSON.parse(jsonData);
+
+        data.tasks = data.tasks.filter((task: any) => task.id !== parseInt(id));
+
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+
+        return NextResponse.json({ success: true });
+    } catch {
+        return NextResponse.json({ error: "Error while deleting data" }, { status: 500 });
     }
 }

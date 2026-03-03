@@ -2,9 +2,10 @@ interface TaskProps {
     taskName: string;
     status: boolean;
     onToggle?: () => void;
+    onDelete?: () => void;
 }
 
-export default function Task({ taskName, status, onToggle }: TaskProps) {
+export default function Task({ taskName, status, onToggle, onDelete }: TaskProps) {
     return (
         <div className="flex justify-between items-center border-b border-t border-gray-300">
             <p className={status ? 'line-through' : ''}>{taskName}</p>
@@ -13,6 +14,7 @@ export default function Task({ taskName, status, onToggle }: TaskProps) {
                 checked={status}
                 onChange={onToggle}
             />
+            <button onClick={onDelete}>Delete</button>
         </div>
     );
 }
