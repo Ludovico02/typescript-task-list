@@ -12,19 +12,9 @@
       "status": true
     },
     {
-      "id": 3,
-      "name": "Read a book",
-      "status": false
-    },
-    {
-      "id": 4,
-      "name": "Finish TypeScript tutorial",
-      "status": false
-    },
-    {
       "id": 5,
       "name": "Call Mom",
-      "status": true
+      "status": false
     }
   ]
 }
