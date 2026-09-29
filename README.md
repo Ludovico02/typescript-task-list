@@ -2,7 +2,7 @@
 
 A simple to-do list web app built with **Next.js**, **React**, **TypeScript** and **Tailwind CSS**. I created it as a hands-on project to learn TypeScript and the Next.js App Router, including how to build a small REST API and connect it to a React frontend.
 
-![Screenshot of the app](./docs/screenshot.png)
+<img src="assets/todo.png" width="600px" alt="screenshot of the app">
 
 ## Features
 
